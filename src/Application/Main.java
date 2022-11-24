@@ -57,7 +57,7 @@ public class Main {
                         int randomchoice = random.nextInt(1, 8);
                         if (randomchoice > 5) {
                             if (atm.getAmount() <= client.getMoney()) {
-                                System.out.println("takes" + " " + operation.getAmount() + " " + "money");
+                                System.out.println("takes" + " " + operation.getAmount() + " " + "lei");
 
                                 client.setMoney(client.getMoney() + operation.getAmount());
                                 System.out.println("Client has" + " " + client.getMoney() + " " + "left");
@@ -69,9 +69,9 @@ public class Main {
                         } else {
                             int putmoney = random.nextInt(1, 2000);
                             client.setMoney(client.getMoney() + putmoney);
-                            System.out.println("put" + " " + putmoney + " " + "money");
+                            System.out.println("put" + " " + putmoney + " " + "lei");
 
-                            System.out.println("Client has" + " " + client.getMoney() + " ");
+                            System.out.println("Client has" + " " + client.getMoney() + " " + "lei");
                         }
 
 
@@ -84,11 +84,11 @@ public class Main {
                         int randomchoice = random.nextInt(1, 8);
                         if (randomchoice > 5) {
                             if (card.getAmount() <= client.getMoney()) {
-                                System.out.println("takes" + " " + operation.getAmount() + " " + "money");
+                                System.out.println("takes" + " " + operation.getAmount() + " " + "lei");
 
                                 client.setMoney(client.getMoney() - operation.getAmount());
                                 //System.out.println("Client has" + " " + operation.getAmount() + " " + "money on card");
-                                System.out.println("Client has" + " " + client.getMoney() + " " + "left");
+                                System.out.println("Client has" + " " + client.getMoney() + " " + "lei left");
                             } else if (card.getAmount() > client.getMoney())
 
                                 System.out.println("tried to take, but Not enough money");
@@ -96,13 +96,13 @@ public class Main {
                         } else if (card.getAmount() <= client.getMoney()) {
                             int putmoney = random.nextInt(1, 2000);
                             client.setMoney(client.getMoney() - putmoney);
-                            System.out.println("put" + " " + putmoney + " " + "money");
+                            System.out.println("put" + " " + putmoney + " " + "lei");
 
-                            System.out.println("Client has" + " " + putmoney + " " + "on card");
-                            System.out.println("Client has" + " " + client.getMoney() + " " + "left");
+                            System.out.println("Client has" + " " + putmoney + " " + "lei on card");
+                            System.out.println("Client has" + " " + client.getMoney() + " " + "lei left");
                         } else if (card.getAmount() > client.getMoney()) {
                             int putmoney = random.nextInt(1, 2000);
-                            System.out.println("put" + " " + putmoney + " " + "money");
+                            System.out.println("put" + " " + putmoney + " " + "lei");
                             System.out.println("Client doesn't have enough money");
                         }
                     }
@@ -136,7 +136,6 @@ public class Main {
                                 if (randomizer > 5) {
                                     System.out.println("Client is gone because of the exchange rate that is" + " " + exchange.getExchangeRateEuro());
                                 } else {
-                                    System.out.println("Exchange rate is" + " " + exchange.getExchangeRateEuro());
                                     client.setMoney(client.getMoney() - operation.getAmount());
                                     operation.setAmount(operation.getAmount() / exchange.getExchangeRateEuro());
                                     System.out.println("Client got" + " " + operation.getAmount() + " " + "euro");
